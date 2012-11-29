@@ -128,15 +128,12 @@ body {
 .content a:visited {text-decoration:none;color:#cb4b16;}  /* visited link */
 .content a:hover {color:#cb4b16;}  /* mouse over link */
 .content a:active {color:#cb4b16;}  /* selected link */
-.content ul {
+.content ul,ol {
 	margin-top: 0px;
 	color:#586e75;
 }
 .content h2,p,lh {
 	color:#586e75
-}
-.content p {
-  max-width: 32em;
 }
 
 .intro h2{

@@ -40,11 +40,93 @@
 
 <h3 id='the_plan'>The Plan</h3>
 
-<p>Obviously I want to get rid of restful_authentication entirely and just use Devise but I&#8217;m trying to figure out the best migration path. I have a couple options here. 1. Totally rip out restful_authentication from the app so that it has no authentication. And then go in and install Devise and build from there. 2. Migrate from restful_authentication little by little until I get what I want from Devise.</p>
+<p>Obviously I want to get rid of restful_authentication entirely and just use Devise but I&#8217;m trying to figure out the best migration path. I have a couple options here.</p>
+
+<ol>
+<li>Totally rip out restful_authentication from the app so that it has no authentication. And then go in and install Devise and build from there.</li>
+
+<li>Migrate from restful_authentication little by little until I get what I want from Devise.</li>
+</ol>
 
 <h3 id='the_solution'>The Solution</h3>
 
 <p>There&#8217;s a lot of stuff going on with restful_authentication sprinkled all throughout the app so it&#8217;s probably worthwhile going little by little (plan #2).</p>
+
+<h3 id='notes'>Notes</h3>
+
+<h4 id='installing_devise_from_railscasts'>Installing devise (from railscasts)</h4>
+
+<p>For Rails 2.3, use version devise 1.0.x</p>
+
+<ol>
+<li>
+<p>Include gem devise v=1.0.6</p>
+</li>
+
+<li>
+<p>run bundle install</p>
+</li>
+
+<li>
+<p>run rails generate devise_install - Creates config/initializers/devise.rb and a locale yml file</p>
+</li>
+
+<li>
+<p>rails generate devise User (don&#8217;t need to do this in my app) - creates user.rb model - has call to devise with modules you want supported like validatable</p>
+
+<ul>
+<li>creates db migration</li>
+
+<li>route devise_for :users</li>
+</ul>
+</li>
+
+<li>
+<p>Set up views to have sign in, logout buttons - setup</p>
+</li>
+</ol>
+
+<h4 id='customizing_devise_from_railscasts'>Customizing devise (from railscasts)</h4>
+
+<ul>
+<li>
+<p>authorization</p>
+
+<ul>
+<li>in controller use <code>before_filter :authenticate_user!, :except =&gt; [:show, :index]</code></li>
+
+<li>but using Cancan might be better</li>
+</ul>
+</li>
+
+<li>
+<p>generatating devise_views - generates passowrd reset pages..etc.</p>
+</li>
+
+<li>
+<p>locales devise yml file - used to change messages</p>
+</li>
+
+<li>
+<p>devise.rb file for config changes</p>
+</li>
+
+<li>
+<p>config routes at devise_for :users - change sign_up to register with <code>:path_names =&gt; { :sign_up =&gt; &quot;register&quot;}</code></p>
+</li>
+
+<li>
+<p>config to use username instead of email</p>
+
+<ul>
+<li>generate migration to add username to users</li>
+
+<li><code>config.authentication_keys = {:username}</code></li>
+
+<li>change sign in form to take <code>:username</code></li>
+</ul>
+</li>
+</ul>
     <hr>
     <div class="pagination">
       <ul>
