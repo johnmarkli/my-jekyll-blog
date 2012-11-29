@@ -122,8 +122,7 @@ body {
 .content {
 	margin-left: 3em;
 	margin-right: 3em;
-	min-width: 25em;
-	max-width: 30em;
+	max-width: 45em;
 }
 .content a:link {text-decoration:none;color:#cb4b16;}      /* unvisited link */
 .content a:visited {text-decoration:none;color:#cb4b16;}  /* visited link */
@@ -135,6 +134,9 @@ body {
 }
 .content h2,p,lh {
 	color:#586e75
+}
+.content p {
+  max-width: 32em;
 }
 
 .intro h2{
