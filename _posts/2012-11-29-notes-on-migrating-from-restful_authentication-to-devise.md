@@ -33,22 +33,22 @@ throughout the app so it's probably worthwhile going little by little \(plan #2\
 #### Installing devise \(from railscasts\)
 For Rails 2\.3, use version devise 1\.0\.x
 
-- Include gem devise v=1\.0\.6
+1. Include gem devise v=1\.0\.6
 
-- run bundle install
+2. run bundle install
 
-- run rails generate devise install
+3. run rails generate devise install
 
-  - Creates config/initializers/devise\.rb and a locale yml file
+	- Creates config/initializers/devise\.rb and a locale yml file
 
-- rails generate devise User \(don't need to do this in my app\)
+4. rails generate devise User \(don't need to do this in my app\)
 
 	- creates user\.rb model
 	- has call to devise with modules you want supported like validatable
 	- creates db migration
 	- route devise\_for :users
 
-- Set up views to have sign in logout buttons
+5. Set up views to have sign in logout buttons
 
 	- setup
 
