@@ -58,7 +58,7 @@
 
 <p>For Rails 2.3, use version devise 1.0.x</p>
 
-<ol>
+<ul>
 <li>
 <p>Include gem devise v=1.0.6</p>
 </li>
@@ -68,13 +68,21 @@
 </li>
 
 <li>
-<p>run rails generate devise_install - Creates config/initializers/devise.rb and a locale yml file</p>
+<p>run rails generate devise install</p>
+
+<ul>
+<li>Creates config/initializers/devise.rb and a locale yml file</li>
+</ul>
 </li>
 
 <li>
-<p>rails generate devise User (don&#8217;t need to do this in my app) - creates user.rb model - has call to devise with modules you want supported like validatable</p>
+<p>rails generate devise User (don&#8217;t need to do this in my app)</p>
 
 <ul>
+<li>creates user.rb model</li>
+
+<li>has call to devise with modules you want supported like validatable</li>
+
 <li>creates db migration</li>
 
 <li>route devise_for :users</li>
@@ -82,9 +90,13 @@
 </li>
 
 <li>
-<p>Set up views to have sign in, logout buttons - setup</p>
+<p>Set up views to have sign in logout buttons</p>
+
+<ul>
+<li>setup</li>
+</ul>
 </li>
-</ol>
+</ul>
 
 <h4 id='customizing_devise_from_railscasts'>Customizing devise (from railscasts)</h4>
 
@@ -100,11 +112,19 @@
 </li>
 
 <li>
-<p>generatating devise_views - generates passowrd reset pages..etc.</p>
+<p>generatating devise views</p>
+
+<ul>
+<li>generates passowrd reset pages etc</li>
+</ul>
 </li>
 
 <li>
-<p>locales devise yml file - used to change messages</p>
+<p>locales devise yml file</p>
+
+<ul>
+<li>used to change messages</li>
+</ul>
 </li>
 
 <li>
@@ -112,7 +132,11 @@
 </li>
 
 <li>
-<p>config routes at devise_for :users - change sign_up to register with <code>:path_names =&gt; { :sign_up =&gt; &quot;register&quot;}</code></p>
+<p>config routes at devise for :users</p>
+
+<ul>
+<li>change sign up to register with <code>:path_names =&gt; { :sign_up =&gt; &quot;register&quot;}</code></li>
+</ul>
 </li>
 
 <li>
