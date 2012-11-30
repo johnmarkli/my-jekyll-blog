@@ -77,3 +77,12 @@ For Rails 2\.3, use version devise 1\.0\.x
   - generate migration to add username to users
   - `config.authentication_keys = {:username}`
   - change sign in form to take `:username`
+
+#### Sorting out what restful\_authentication is doing
+- User model
+- includes 2 modules in `application_controller.rb`
+
+  1. authenticated system
+  2. authorization -> for access control
+
+      - Access control with `access_control` keyword in each controller that needs it

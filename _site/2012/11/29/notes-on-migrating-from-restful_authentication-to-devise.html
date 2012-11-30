@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Notes on migrating from restful_authentication to Devise</title>
 		<meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -149,6 +149,32 @@
 
 <li>change sign in form to take <code>:username</code></li>
 </ul>
+</li>
+</ul>
+
+<h4 id='sorting_out_what_restful_authentication_is_doing'>Sorting out what restful_authentication is doing</h4>
+
+<ul>
+<li>
+<p>User model</p>
+</li>
+
+<li>
+<p>includes 2 modules in <code>application_controller.rb</code></p>
+
+<ol>
+<li>
+<p>authenticated system</p>
+</li>
+
+<li>
+<p>authorization -&gt; for access control</p>
+
+<ul>
+<li>Access control with <code>access_control</code> keyword in each controller that needs it</li>
+</ul>
+</li>
+</ol>
 </li>
 </ul>
     <hr>
