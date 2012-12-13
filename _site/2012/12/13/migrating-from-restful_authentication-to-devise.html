@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>About</title>
+		<title>Migrating from restful_authentication to Devise (Part 2)</title>
 		<meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,7 +33,79 @@
       <a href="/devblog.html"><h3>Dev Blog</h3></a>
     </div>
 		<div class="content">
-			
+			<div class="post">
+	<h2>Migrating from restful_authentication to Devise (Part 2)</h2>
+    <p>I&#8217;ve finally got Devise up and running along side restful_authentication.</p>
+
+<p>Steps:</p>
+
+<ol>
+<li>
+<p><code>ruby script/generate devise_install</code></p>
+
+<ul>
+<li>
+<p>devise.rb in config/initializers</p>
+
+<ul>
+<li><code>require &#39;devise/orm/active_record&#39;</code></li>
+</ul>
+</li>
+
+<li>
+<p>devise.en.yml locale file</p>
+</li>
+</ul>
+</li>
+
+<li>
+<p><code>ruby script/generate devise Devuser</code></p>
+
+<ul>
+<li>
+<p>model named Devuser so it doesn&#8217;t conflict with User</p>
+</li>
+
+<li>
+<p>devuser.rb model -&gt; moved to Common/models</p>
+</li>
+
+<li>
+<p>DB migration -&gt; moved to Common/db/migrate</p>
+</li>
+</ul>
+</li>
+
+<li>
+<p><code>rake db:migrate</code> in Web (to pick up Devise::Schema)</p>
+</li>
+
+<li>
+<p><code>ruby script/generate devise_views</code></p>
+
+<ul>
+<li>creates view templates -&gt; changed most to haml to fit in to layouts</li>
+</ul>
+</li>
+</ol>
+
+<p>Also, config.mailer should be configured according to your enviornment.</p>
+
+<p>The next step is to look at what restful_authentication is doing and replace that behaviour with that of devise. Devise offers a number of helper functions that do exactly what restful_authentication was doing. Another thing to look at is using CanCan for doing authorization.</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2012/11/29/notes-on-migrating-from-restful_authentication-to-devise.html" title="Notes on migrating from restful_authentication to Devise">&larr; Previous</a></li>
+      
+        <li><a href="">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+</div>
 
 		</div>
 

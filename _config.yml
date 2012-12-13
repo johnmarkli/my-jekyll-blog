@@ -1,7 +1,7 @@
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "Procfile", "bundle"]
 
-title : Welcome. Here's a blog.
+title : johnmarkli.com
 author :
   name : John Li
   email : johnmarkli@gmail.com
